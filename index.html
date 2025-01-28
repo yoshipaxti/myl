@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encouragement Greeting</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const flowers = document.querySelectorAll('.flower, .heart');
+    
+    flowers.forEach((flower, index) => {
+        flower.style.opacity = 0; // Start hidden
+        setTimeout(() => {
+            flower.style.opacity = 1; // Fade in
+            flower.style.transition = 'opacity 0.5s ease-in-out';
+        }, index * 300); // Delay for each flower
+    });
+});
+    </script>
+    <style>
+       body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f8ff;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.greeting {
+    font-size: 3em;
+    color: #ff69b4;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.flowers {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.flower, .heart {
+    display: inline-block;
+    margin: 0 10px;
+    animation: bounce 1s infinite alternate;
+}
+
+.flower {
+    animation-duration: 1.5s; /* Longer for flowers */
+}
+
+.heart {
+    color: red;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-20px); }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="greeting">Do your best Milo! I'll be here to understand and support you!</h1>
+        <div class="flowers">
+            <span class="flower">🌸</span>
+            <span class="flower">🌼</span>
+            <span class="flower">🌺</span>
+            <span class="flower">🌻</span>
+            <span class="heart">❤️</span>
+            <span class="heart">❤️</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
